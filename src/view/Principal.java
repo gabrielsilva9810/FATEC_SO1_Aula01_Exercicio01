@@ -5,15 +5,28 @@ import controller.OperacoesController;
 public class Principal {
 
 	public static void main(String[] args) {
-		
-		//op.concatenaString();
-		//op.concatenaBuffer();
-		
-		OperacoesController op = new OperacoesController();
-		double[] qtdVetor = new double[1000];
-		double[] qtdVetorB = new double[1000];
-		//10000 e 100000
-		
-		op.operacaoVetor(0, 0);	
-}
+			//INSTANCIA PARA A CLASSE DE CONTROLER
+			OperacoesController vetController = new OperacoesController();
+			
+			//DECLARAR OS VETORES
+	    	int[] vetorMilposicoes = vetController.gerarVet(1000);
+	    	int[] vetorDezMilposicoes  = vetController.gerarVet(10000);
+	    	int[] vetorCemMilposicoes  = vetController.gerarVet(100000);
+	    	
+	    	//EXIBIR RESULTADO
+	    	System.out.println("Para 1000");
+	    	vetController.percoVet(vetorMilposicoes);
+	    	vetController.perBuffer(vetorMilposicoes);
+	    	System.out.println("-------------------------------------------------");
+	    	
+	    	System.out.println("Para 10000");
+	    	vetController.percoVet(vetorDezMilposicoes);
+	    	vetController.perBuffer(vetorDezMilposicoes);
+	    	System.out.println("-------------------------------------------------");
+	    	
+	    	System.out.println("Para 100000");
+	    	vetController.percoVet(vetorCemMilposicoes);
+	    	vetController.perBuffer(vetorCemMilposicoes);
+	    	System.out.println("-------------------------------------------------");
+		}
 }
